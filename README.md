@@ -107,7 +107,8 @@ data/
 docs/
   codebook.md        every field, every coding rule
   reproduction.md    how to rebuild the corpus from scratch
-figures/             figure scripts and output
+figures/             figure scripts and output (see figures/README.md for
+                     which plate is which article figure)
 scripts/             collection, screening, coding, assembly
 source_registry/     every archived page discovered, with timestamps
 ```

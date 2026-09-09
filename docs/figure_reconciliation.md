@@ -1,8 +1,16 @@
-# Reconciling Figure 1 and Figure 2
+# Reconciling Figure 1 and Figure 2 (historical)
 
-*Governing at a distance* — diagnostic note. Updated 6 September 2026 after
-pixel measurement of the figures and confirmation from the author that Figure 1
-plots the top twelve countries only.
+> **Status: superseded, kept as a record.** Everything below concerns the
+> earlier 279-posting corpus and the figures drawn from it. That corpus and
+> those figures no longer exist. The corpus was rebuilt from the Internet
+> Archive in September 2026 and now holds 736 screened-in postings, 216 of them
+> with a recoverable location. None of the counts in this note are current, and
+> none should be quoted. See `CHANGELOG.md` for the rebuild, `README.md` for
+> the figures that stand, and `figures/README.md` for which plate is which.
+>
+> This note is kept because it documents how the discrepancy was found and what
+> it turned out to be, which is part of the record of how the corpus was
+> checked. It is not guidance.
 
 ## The problem
 
@@ -79,39 +87,28 @@ Since Germany sits at 2, the cut line is 2 roles, and the undisplayed countries
 hold one or two each: roughly seven to twelve small countries carrying Meta's 4
 and TikTok's 10. An ordinary long tail.
 
-## What to check when the corpus is recovered
+## What happened
 
-1. Count rows whose location field names more than one country.
-2. Rebuild the country table from data deduplicated by `job_id`, assigning each
-   posting a single primary location, and confirm country counts then sum to
-   40 / 154 / 85.
-3. Confirm Google has no roles in countries below the cut, which is what this
-   reconciliation implies.
+The corpus was rebuilt rather than patched, so the reconciliation resolved
+itself. All three arms were recollected from the Internet Archive with a single
+screening rule, deduplicated by platform job identifier, and given one primary
+location each, the first site listed where a posting names more than one. The
+country table and the platform totals are now built from the same rows, so they
+cannot disagree.
 
-`scripts/prepare_release.py` in the replication repository now blocks any
-release where country counts exceed platform totals, so this cannot recur
-silently.
+Two things in the diagnosis above survived the rebuild and two did not.
 
-## What this does and does not affect
+**Survived.** The three-hub concentration is still the dominant pattern, and
+Google/YouTube still has a genuine structural zero in Singapore, which is worth
+a sentence in the article given that Singapore is one of TikTok's largest hubs.
 
-**Unaffected.** The paper's central claim. The three-hub concentration,
-152 + 39 + 37 = 228, or 82% of 279, is identical in both figures. Africa is zero
-in both. Every hub cell agrees. Sections 4.1 through 4.4 and the whole argument
-stand.
+**Did not survive.** The 82 per cent figure was a Meta-only count; across all
+three arms the hub share is 73 per cent, 158 of 216 located postings. And Africa
+is no longer zero: the corpus records one Africa-located posting, an
+eleven-month Talent Acquisition Partner contract in Casablanca.
 
-**Affected.** Figure 1's country detail, and its caption. As drawn, Figure 1
-implies a Google total of 163, contradicting the 154 stated in the text a few
-paragraphs later.
-
-## Recommendation
-
-Treat **Figure 2 as authoritative** and regenerate Figure 1 from the same table,
-deduplicated by job identifier.
-
-Then fix the caption. The current one does not say the chart is a top-twelve
-cut, so a reader who sums the bars gets 274 and cannot reconcile it with the
-stated 279. It needs a line to the effect of: *Top twelve countries shown; a
-further N countries with one or two roles each (14 roles) are omitted.*
-
-Reviewer 1 asked for stronger methodological transparency. Fixing this before
-resubmission converts a vulnerability into a demonstration of care.
+The figure that caused the trouble, a country by platform bar chart cut to the
+top twelve, is no longer the article's Figure 1. Figure 1 is now a unit chart
+that draws one square per located posting, so a reader can count the squares
+and get the stated denominator. A cut that has to be explained in a caption was
+replaced by a picture that does not need one.
