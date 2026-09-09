@@ -1,0 +1,71 @@
+# ---------------------------------------------------------------------------
+# Human subjects material. Never commit any of this.
+# The 30 practitioner interviews were given under a consent agreement that does
+# not cover publication. Transcripts, audio, notes and anything derived from
+# them that could identify a participant stay off this repository permanently.
+# ---------------------------------------------------------------------------
+interviews/
+transcripts/
+*.m4a
+*.mp3
+*.wav
+*.vtt
+*.srt
+*consent*
+*participant*
+*interview*
+*_PRIVATE*
+*_IDENTIFIED*
+
+# ---------------------------------------------------------------------------
+# Raw captures. Excluded for size and because redistributing whole job pages
+# and archived HTML raises copyright and terms-of-service questions that the
+# derived, coded data does not. The source_url and capture timestamp in the
+# public data let anyone retrieve the same pages themselves.
+# ---------------------------------------------------------------------------
+data/raw/*
+!data/raw/.gitkeep
+*_html/
+*_rendered/
+*_xhr/
+*.html
+*.warc
+*.warc.gz
+
+# ---------------------------------------------------------------------------
+# Working data. Only data/public/ is released; data/processed/ is the
+# intermediate stage and may still contain full advertisement text.
+# ---------------------------------------------------------------------------
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/README.md
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# Editors and operating systems
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*~
+~$*
+
+# ---------------------------------------------------------------------------
+# Manuscript drafts. The paper belongs with the journal, not here.
+# ---------------------------------------------------------------------------
+*.docx
+*.doc
+*.rtf
+manuscript/

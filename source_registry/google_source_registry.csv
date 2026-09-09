@@ -1,0 +1,8 @@
+company_name,source_type,source_url,notes
+Google,careers_home,https://www.google.com/about/careers/applications/,Google careers home
+Google,careers_search,https://www.google.com/about/careers/applications/jobs/results/,main Google careers search - client rendered
+Google,careers_search_ts,https://www.google.com/about/careers/applications/jobs/results/?q=%22trust%20and%20safety%22,keyword search for trust and safety roles
+Google,transparency_home,https://transparencyreport.google.com/,Google Transparency Report
+Google,youtube_removals,https://transparencyreport.google.com/youtube-policy/removals,YouTube community guidelines enforcement
+Google,safety_blog,https://blog.google/technology/safety-security/,Google safety and security blog
+Google,youtube_how_it_works,https://www.youtube.com/howyoutubeworks/policies/community-guidelines/,YouTube enforcement policy context

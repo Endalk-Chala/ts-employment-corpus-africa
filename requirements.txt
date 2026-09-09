@@ -1,0 +1,10 @@
+# Collection and coding
+requests>=2.31
+beautifulsoup4>=4.12
+
+# Rendered-page collection (Google, TikTok)
+# after installing, run: playwright install chromium
+playwright>=1.44
+
+# Figure regeneration
+matplotlib>=3.8

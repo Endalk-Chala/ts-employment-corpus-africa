@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "Offshored Trust and Safety employment corpus"
+message: "If you use this dataset or code, please cite the article."
+type: dataset
+authors:
+  - family-names: Chala
+    given-names: Endalkachew H.
+    orcid: "https://orcid.org/0000-0001-6210-6706"
+    email: endalk2006@gmail.com
+license: CC-BY-4.0
+repository-code: "https://github.com/USERNAME/REPONAME"
+keywords:
+  - trust and safety
+  - content moderation
+  - platform governance
+  - Africa
+  - localisation gap
+  - security assemblage
+preferred-citation:
+  type: article
+  title: "Governing at a distance: Offshored trust and safety, security assemblages, and the African localisation gap"
+  authors:
+    - family-names: Chala
+      given-names: Endalkachew H.
+      orcid: "https://orcid.org/0000-0001-6210-6706"
+  journal: "Internet Policy Review"
+  year: 2026
