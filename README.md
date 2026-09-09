@@ -13,15 +13,15 @@ enforced by `.gitignore`.
 
 ## What the corpus is
 
-716 Trust and Safety and governance-adjacent job advertisements from Meta,
+736 Trust and Safety and governance-adjacent job advertisements from Meta,
 Google/YouTube and TikTok, reconstructed from Internet Archive captures.
 
 | Platform | Postings | What survived in the capture |
 |---|---:|---|
-| TikTok | 560 | Job title only |
+| TikTok | 580 | Job title only |
 | Google/YouTube | 117 | Rendered detail block, including office |
 | Meta | 39 | Full schema.org posting data and body text |
-| **Total** | **716** | |
+| **Total** | **736** | |
 
 The three arms do not observe the same thing, and the corpus does not pretend
 otherwise. Every row carries an `evidence_level` field:
@@ -30,14 +30,14 @@ otherwise. Every row carries an `evidence_level` field:
 |---|---|---:|
 | `full_text` | Structured posting data and description | 39 |
 | `detail_only` | Rendered detail block with a location | 117 |
-| `title_only` | Job title alone | 560 |
+| `title_only` | Job title alone | 580 |
 
 A fourth level, `detail_no_location`, exists in the coding scheme for rendered
 pages carrying no location field. No posting in this corpus took that value.
 
 **Any claim about geography must state which evidence levels it draws on.**
-216 of the 716 postings have a recoverable location. That is the denominator for
-every geographic figure in the article, and it is not 716.
+216 of the 736 postings have a recoverable location. That is the denominator for
+every geographic figure in the article, and it is not 736.
 
 ## Observation window
 
@@ -67,8 +67,9 @@ The single Africa-located posting is a Talent Acquisition Partner for Trust and
 Safety in Casablanca: a role hired to recruit Trust and Safety staff rather than
 to perform Trust and Safety work.
 
-Three postings in 716 name an African language, two Hausa and one Swahili. Two
-of the three are located in Dublin.
+Five postings in 736 name an African language, three Hausa and two Swahili. Two
+of the five are located in Dublin; the other three state no location. None is
+located in Africa.
 
 ---
 

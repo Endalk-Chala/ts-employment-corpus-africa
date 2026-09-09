@@ -107,7 +107,7 @@ govern what the data can be asked:
 
 - **A capture is not an observation.** The distribution of captures over time
   reflects how often the Internet Archive crawled these pages, not how often the
-  platforms were hiring. Of the 716 captures, 551 fall in 2025.
+  platforms were hiring. Of the 736 captures, 565 fall in 2025.
 - **No posting found is not the same as no capacity exists.** Absence in this
   corpus means no publicly identifiable advertisement was preserved in the
   sources searched, and nothing stronger.
