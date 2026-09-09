@@ -188,8 +188,7 @@ def manuscript_captions():
     return {
         "units": (
             "Figure 1: A unit chart of every Trust and Safety posting in the "
-            "corpus whose location is recoverable (n = 216 of 716 screened "
-            "in), one square per advertisement, grouped by the three "
+            "corpus whose location is recoverable (n = 216 of 736 screened in), one square per advertisement, grouped by the three "
             "regulatory hubs (the United States, Ireland and Singapore), all "
             "other locations, and Africa. Source: archived career pages from "
             "Meta, Google/YouTube and TikTok, August 2023 to September 2026."),
@@ -201,15 +200,13 @@ def manuscript_captions():
             "right."),
         "languages": (
             "Figure 4: Languages named in Trust and Safety job titles, ranked "
-            "by the number of postings naming each (n = 63 postings across 27 "
-            "languages), with African languages in red. Language is read from "
+            "by the number of postings naming each (n = 79 postings across 31 languages), with African languages in red. Language is read from "
             "the job title, the only field recoverable for every posting in "
             "the corpus."),
         "sited": (
-            "Figure 5: The three postings in the corpus that name an African "
-            "language, each showing the region where the language is "
+            "Figure 5: All five postings in the corpus that name an African language, each showing the region where the language is "
             "principally spoken against the office where the role is sited. "
-            "All three are TikTok postings; no Meta or Google/YouTube posting "
+            "All five are TikTok postings; no Meta or Google/YouTube posting "
             "names an African language. A cross marks a posting that states "
             "no location, an absence of evidence rather than evidence of a "
             "location in Africa."),
@@ -246,26 +243,25 @@ def alt_texts():
             "1 posting (0.5%)'. The horizontal axis is labelled 0, 25, 50, "
             "75, 100 per cent."),
         "languages": (
-            "A horizontal bar chart of the 27 languages named in Trust and "
-            "Safety job titles, ranked by the number of postings naming each. "
+            "A horizontal bar chart of the 31 languages named in Trust and Safety job titles, ranked by the number of postings naming each. "
             "The horizontal axis is labelled 'postings naming the language' "
-            "and runs from 0 to 10. Spanish leads with nine postings, then "
-            "Arabic with seven, then Japanese, German and English with four "
-            "each. Most of the remaining languages are named in only one "
+            "and runs from 0 to 12. Arabic leads with eleven postings, then Spanish with ten, then German with five, then Urdu, Japanese and English with four each. Most of the remaining languages are named in only one "
             "posting. Two African languages appear, drawn in red and labelled "
             "in the legend as 'African language' against 'Every other "
-            "language': Hausa, with two postings, and Swahili, with one. "
-            "Between them they account for three of the 63 postings that name "
-            "a language at all."),
+            "language': Hausa, with three postings, and Swahili, with two. Between them they account for five of the 79 postings that name a language at all."),
         "sited": (
-            "A chart with one row for each of the three postings in the "
-            "corpus that name an African language, two for Hausa and one for "
+            "A chart with one row for each of the five postings in the corpus "
+            "that name an African language, three for Hausa and two for "
             "Swahili. Each row has two marks joined by a line: a red mark for "
-            "the region where the language is principally spoken, a blue mark "
-            "for the office where the role is sited. Row one reads 'Hausa, "
-            "spoken in West Africa' on the left and 'Dublin, role sited here' "
-            "on the right. Row two reads 'Hausa, spoken in West Africa' and "
-            "'no location stated in the archived posting', its right-hand "
-            "mark a cross rather than a dot. Row three reads 'Swahili, spoken "
-            "in East Africa' and 'Dublin, role sited here'."),
+            "the region where the language is principally spoken, and on the "
+            "right either a blue mark for the office where the role is sited "
+            "or a cross where the posting states no location. Row one reads "
+            "'Hausa, spoken in West Africa' on the left and 'Dublin, role "
+            "sited here' on the right. Rows two and three read 'Hausa, spoken "
+            "in West Africa' and 'no location stated in the archived posting', "
+            "their right-hand marks crosses rather than dots. Row four reads "
+            "'Swahili, spoken in East Africa' and 'Dublin, role sited here'. "
+            "Row five reads 'Swahili, spoken in East Africa' and 'no location "
+            "stated in the archived posting', its right-hand mark a cross. No "
+            "row is sited in Africa."),
     }

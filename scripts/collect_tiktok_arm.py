@@ -124,6 +124,14 @@ INCLUDE = [
     # "label" alone caught "Label Designer, Music" — a record-label job, not a
     # data-labelling one. Qualify it.
     "data label*", "content label*", "labeling specialist", "labelling specialist",
+    # Added 9 Sep 2026 after an audit of the dropped rows found Trust and Safety
+    # roles the list had missed. "quality assurance" alone was rejected: it also
+    # catches software, ads and commerce QA. These are safety-qualified, the same
+    # reasoning that qualifies "label" above.
+    "safety model*", "safety label*", "law enforcement",
+    # the no-space spelling. "trust & safety" and "t&s" were present; TikTok also
+    # writes "Trust&Safety", which matched neither.
+    "trust&safety",
 ]
 
 # The false-positive family found in the Meta arm: engineering senses of
@@ -582,6 +590,55 @@ def fetch(limit, only_gen, retry_failed=False):
         print(f"   {n:6d}  {k}")
 
 
+# ------------------------------------------------------------------ rescreen
+def rescreen():
+    """Re-apply the screen to titles already in the registry.
+
+    The fetch saved a title for every capture, so a change to the term list can
+    be applied without touching the network. Only the screening columns are
+    rewritten; page_status, timestamps and saved_html are left as they were.
+    """
+    path = PROJECT_ROOT / "data_processed" / "tiktok_title_registry.csv"
+    if not path.exists():
+        sys.exit("run --fetch first")
+    rows = list(csv.DictReader(path.open(encoding="utf-8-sig")))
+    before = Counter(r["screen_decision"] for r in rows)
+
+    changed = []
+    for r in rows:
+        title = r.get("job_title") or ""
+        decision, matched, excluded, afr, oth = screen(title)
+        if r.get("page_status") != "detail":
+            decision = "unusable"
+        was = r["screen_decision"]
+        if decision != was:
+            changed.append((was, decision, title))
+        r["screen_decision"] = decision
+        r["matched_terms"] = "; ".join(matched)
+        r["excluded_terms"] = "; ".join(excluded)
+        r["african_language"] = "; ".join(afr)
+        r["other_language"] = "; ".join(oth)
+        mkts = markets_in(title)
+        cits = cities_in(title)
+        r["market_named"] = "; ".join(mkts)
+        r["city_named"] = "; ".join(cits)
+        r["country_of_city"] = "; ".join(dict.fromkeys(CITIES[c] for c in cits))
+
+    with path.open("w", encoding="utf-8", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
+        w.writeheader()
+        w.writerows(rows)
+
+    after = Counter(r["screen_decision"] for r in rows)
+    print(f"rescreened {len(rows)} rows in {path.name}\n")
+    for k in sorted(set(before) | set(after)):
+        d = after[k] - before[k]
+        print(f"   {k:10} {before[k]:6} -> {after[k]:6}  ({d:+d})")
+    print(f"\nchanged decisions: {len(changed)}")
+    for was, now, t in changed[:40]:
+        print(f"   {was} -> {now}: {t[:76]}")
+
+
 # --------------------------------------------------------------------- report
 def report():
     path = PROJECT_ROOT / "data_processed" / "tiktok_title_registry.csv"
@@ -666,6 +723,8 @@ def main():
     ap.add_argument("--discover-only", action="store_true")
     ap.add_argument("--fetch", action="store_true")
     ap.add_argument("--report", action="store_true")
+    ap.add_argument("--rescreen", action="store_true",
+                    help="re-apply the term list to titles already fetched")
     ap.add_argument("--retry-failed", dest="retry_failed", action="store_true",
                     help="drop rows that failed to fetch, so --fetch retries them")
     ap.add_argument("--from", dest="date_from", type=int, default=2019)
@@ -678,6 +737,8 @@ def main():
 
     if args.discover_only:
         discover(args.date_from, args.date_to)
+    elif args.rescreen:
+        rescreen()
     elif args.fetch:
         fetch(args.limit, args.generation, args.retry_failed)
     elif args.report:
