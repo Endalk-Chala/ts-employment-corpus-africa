@@ -11,6 +11,8 @@ enforced by `.gitignore`.
 
 ---
 
+Canonical location: <https://github.com/Endalk-Chala/ts-employment-corpus-africa>
+
 ## What the corpus is
 
 736 Trust and Safety and governance-adjacent job advertisements from Meta,
