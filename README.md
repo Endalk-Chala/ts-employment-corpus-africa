@@ -26,10 +26,14 @@ Google/YouTube and TikTok, reconstructed from Internet Archive captures.
 The three arms do not observe the same thing, and the corpus does not pretend
 otherwise. Every row carries an `evidence_level` field:
 
-- `full_text` — structured posting data and description
-- `detail_only` — rendered detail block with a location
-- `detail_no_location` — rendered page, no location field present
-- `title_only` — job title alone
+| Level | What survived | Postings |
+|---|---|---:|
+| `full_text` | Structured posting data and description | 39 |
+| `detail_only` | Rendered detail block with a location | 117 |
+| `title_only` | Job title alone | 560 |
+
+A fourth level, `detail_no_location`, exists in the coding scheme for rendered
+pages carrying no location field. No posting in this corpus took that value.
 
 **Any claim about geography must state which evidence levels it draws on.**
 216 of the 716 postings have a recoverable location. That is the denominator for
@@ -121,6 +125,7 @@ python scripts/collect_tiktok_arm.py --fetch
 # merge the three arms and draw the figures
 python scripts/build_unified_corpus.py
 python scripts/make_figures.py
+python scripts/make_figures_alt.py --form all
 ```
 
 Full collection takes several hours, most of it the TikTok arm, which fetches
