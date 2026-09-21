@@ -171,40 +171,53 @@ def caption(fig, ax, text, t):
 
 
 def manuscript_captions():
-    """Caption text for each figure, for pasting into the manuscript.
+    """Caption text for each figure, as submitted to the journal.
 
     Kept here so the words and the pictures stay together even though the
     words are not drawn on the pictures. British spelling, sentence case,
-    numbers spelled out below 10, per the journal's guide. Captions follow
-    the figure.
+    numerals from 10 per the journal's guide. Captions follow the figure.
 
-    Numbering assumes the conceptual Meta-Sama-Majorel assemblage diagram
-    keeps its place as Figure 3, so the two language plates are 4 and 5.
+    Numbering is the submitted numbering: three data plates, Figures 1 to 3.
+    An earlier draft carried five plates plus a conceptual Meta, Sama and
+    Majorel assemblage diagram at Figure 3; the diagram and two plates were
+    cut in revision. The plates keyed "hubs" and "sited" below are no longer
+    in the article and are kept for checking the corpus only.
 
-    House form, from a published article: "Figure 1: " with a colon, then a
-    descriptive noun phrase rather than a sentence opening with a verb, then
-    any qualifying sentences. Left-aligned, below the figure.
+    House form, from the journal's style guide v5.4: "Figure 1: " with a
+    colon, then a descriptive noun phrase rather than a sentence opening with
+    a verb, then any qualifying sentences. Left-aligned, below the figure.
+
+    The manuscript is the authority for this wording. If a caption is edited
+    there, edit it here too: the two are not generated from a single source.
     """
     return {
+        # --- the three plates in the submitted article ---
         "units": (
-            "Figure 1: A unit chart of every Trust and Safety posting in the "
-            "corpus whose location is recoverable (n = 216 of 736 screened in), one square per advertisement, grouped by the three "
-            "regulatory hubs (the United States, Ireland and Singapore), all "
-            "other locations, and Africa. Source: archived career pages from "
-            "Meta, Google/YouTube and TikTok, August 2023 to September 2026."),
-        "hubs": (
-            "Figure 2: The share of located Trust and Safety postings falling "
-            "in the three regulatory hubs, by platform. Percentages are of "
-            "postings with a recoverable location rather than of all postings "
-            "screened in; the denominator for each platform is given at the "
-            "right."),
+            "Figure 1: Geographic concentration of located Trust and Safety "
+            "postings. Each square represents one of the 216 postings with a "
+            "recoverable location. Source: author's employment corpus, "
+            "reconstructed from archived Meta, Google/YouTube, and TikTok "
+            "career pages, August 2023-September 2026."),
+        "dots": (
+            "Figure 2: Trust and Safety postings by country and platform. The "
+            "figure shows the 11 most frequent locations among postings with "
+            "recoverable locations, disaggregated by platform. Source: "
+            "author's employment corpus."),
         "languages": (
-            "Figure 4: Languages named in Trust and Safety job titles, ranked "
-            "by the number of postings naming each (n = 79 postings across 31 languages), with African languages in red. Language is read from "
-            "the job title, the only field recoverable for every posting in "
-            "the corpus."),
+            "Figure 3: Languages named in Trust and Safety job postings. "
+            "Seventy-nine of the 736 postings name at least one language. "
+            "Source: author's employment corpus."),
+
+        # --- not in the article; kept for checking the corpus ---
+        "hubs": (
+            "Not in the article. The share of located Trust and Safety "
+            "postings falling in the three regulatory hubs, by platform. "
+            "Percentages are of postings with a recoverable location rather "
+            "than of all postings screened in; the denominator for each "
+            "platform is given at the right."),
         "sited": (
-            "Figure 5: All five postings in the corpus that name an African language, each showing the region where the language is "
+            "Not in the article. All five postings in the corpus that name an "
+            "African language, each showing the region where the language is "
             "principally spoken against the office where the role is sited. "
             "All five are TikTok postings; no Meta or Google/YouTube posting "
             "names an African language. A cross marks a posting that states "
@@ -230,6 +243,15 @@ def alt_texts():
             "Blue squares fill most of the grid, green squares follow, and a "
             "single red square sits at the end, annotated 'the one posting "
             "located in Africa: a recruiter, in Casablanca'."),
+        "dots": (
+            "A dot chart of the 11 most frequent locations among the 216 "
+            "Trust and Safety postings with a recoverable location, with one "
+            "row per country and separate marks for Meta, Google/YouTube and "
+            "TikTok. The United States leads the chart with 116 postings "
+            "across the three platforms, followed by India with 23, Ireland "
+            "with 21 and Singapore with 21. Morocco appears at the foot of "
+            "the chart with a single TikTok posting and is the only African "
+            "location shown."),
         "hubs": (
             "Four horizontal stacked bars, one each for Meta, Google/YouTube, "
             "TikTok and all platforms combined, each running from 0 to 100 "
